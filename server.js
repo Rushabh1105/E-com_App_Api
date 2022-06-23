@@ -41,6 +41,9 @@ app.get('/home', async function(req,res){
     
 });
 
+app.get('/',(req,res) => {
+    res.send("New Home");
+});
 
 app.listen( config.PORT,async () => {
     console.log('server started on port ', config.PORT );
