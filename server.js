@@ -48,6 +48,10 @@ app.get('/',(req,res) => {
 app.listen( config.PORT,async () => {
     console.log('server started on port ', config.PORT );
 
+    if ((process.env.SYNC)) {
+        await db.sequelize.sync({force : true});
+    }
+
 /*
     const newProduct = await Product.create({
         name : 'Ipad',
