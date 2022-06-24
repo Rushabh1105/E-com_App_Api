@@ -4,7 +4,7 @@ const validator = require('../middlewares/requestValidators');
 
 
 const routes = (app) =>{
-    app.get('/ecom/api/v1/categories', CategoryController.getAllCategory);
+    app.get('/ecom/api/v1/categories', CategoryController.getAllCategories);
     app.post('/ecom/api/v1/categories',validator.validateCategoryCreationRequest, CategoryController.createCategory);
     app.delete('/ecom/api/v1/categories/:id', CategoryController.deleteCategory);
     app.get('/ecom/api/v1/categories/:id', CategoryController.getCategory);
